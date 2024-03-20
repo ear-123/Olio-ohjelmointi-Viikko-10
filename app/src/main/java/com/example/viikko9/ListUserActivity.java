@@ -20,7 +20,7 @@ public class ListUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_list_user_in_recycle_view);
+        setContentView(R.layout.activity_list_user);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.rvUserView), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
