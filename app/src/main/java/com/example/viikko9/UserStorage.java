@@ -1,5 +1,11 @@
 package com.example.viikko9;
 
+import android.content.Context;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class UserStorage {
@@ -22,9 +28,17 @@ public class UserStorage {
         return users;
     }
 
-    public void addUser(User user) {
+    public void addUser(Context context, User user) {
         users.add(user);
-    }
+        try {
+            ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
+            userWriter.writeObject(users);
+            userWriter.close();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

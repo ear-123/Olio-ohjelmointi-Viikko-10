@@ -1,5 +1,6 @@
 package com.example.viikko9;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AddUserActivity extends AppCompatActivity {
-
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,8 @@ public class AddUserActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        context = this;
     }
 
     public void addUser(View view){
@@ -46,7 +49,7 @@ public class AddUserActivity extends AppCompatActivity {
         Log.d("test", lastName);
         Log.d("test", email);
         Log.d("test", degree);
-        UserStorage.getInstance().addUser(new User(firstName, lastName, email, degree));
+        UserStorage.getInstance().addUser(context, new User(firstName, lastName, email, degree));
         Log.d("test", String.valueOf(UserStorage.getInstance().getUsers().size()));
 
 

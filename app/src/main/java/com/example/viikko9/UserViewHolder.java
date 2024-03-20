@@ -14,10 +14,10 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
 
     public UserViewHolder(@NonNull View itemview){
         super(itemview);
-        textFirstName = itemview.findViewById(R.id.FirstName);
-        textLastName = itemview.findViewById(R.id.LastName);
-        textEmail = itemview.findViewById(R.id.Email);
-        textDegreeProgram = itemview.findViewById(R.id.DegreeProgram);
+        textFirstName = itemview.findViewById(R.id.textFirstName);
+        textLastName = itemview.findViewById(R.id.textLastName);
+        textEmail = itemview.findViewById(R.id.textEmail);
+        textDegreeProgram = itemview.findViewById(R.id.textDegreeProgram);
     }
 
 
